@@ -25,7 +25,7 @@ const metods = {
 };
 
 function operate(operand, a, b) {
-    return metods[operand](parseInt(a, 10), parseInt(b, 10));
+    return metods[operand](parseFloat(a), parseFloat(b));
 };
 
 
@@ -35,8 +35,8 @@ let numberB = "";
 const exprBlock = document.querySelector('.expr');
 
 function writeExpression() {
-    let firstNum = parseInt(numberA);
-    let secondNum = parseInt(numberB);
+    let firstNum = Math.round(parseFloat(numberA) * 1000) / 1000;
+    let secondNum = Math.round(parseFloat(numberB) * 1000) / 1000;
     if (numberA == "") {
         exprBlock.innerText = '0';
     } else if (curOperand == "") {
@@ -71,11 +71,12 @@ operandButtons.forEach(
         function() {
             let op = item.innerText;
             if (numberB != "") {
-                if  (op == '=') {
-                    let result = operate(curOperand, numberA, numberB);
-                    numberA = result;
-                    curOperand = "";
-                    numberB = "";
+                let result = operate(curOperand, numberA, numberB);
+                numberA = result;
+                curOperand = "";
+                numberB = "";
+                if (op != '=') {
+                    curOperand = op;
                 }
             } else {
                 if (op != "=" && numberA != "" && numberB == "") {
