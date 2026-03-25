@@ -87,3 +87,15 @@ operandButtons.forEach(
         }
     )
 );
+
+
+delButton = document.querySelector('.clear-btn');
+
+delButton.addEventListener('click', 
+    function() {
+        numberA = "";
+        curOperand = "";
+        numberB = "";
+        writeExpression();
+    }
+);

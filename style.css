@@ -6,12 +6,41 @@
     font-family: "Inter";
 }
 
-.num-box {
+
+.calc {
     background-color: black;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+    border-radius: 20px;
+}
+
+.expr {
+    background-color: white;
+    width: 100%;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.expr-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.num-box {
     display: flex;
     flex-wrap: wrap;
     width: 260px;
-    padding: 30px;
     gap: 20px;
 }
 
@@ -20,8 +49,13 @@ button {
     color: aliceblue;
     border: none;
     border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     font-weight: 600;
     font-size: 20px;
+}
+
+.clear-btn,
+.oper-btn {
+    background-color: orange;
 }
